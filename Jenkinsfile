@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        GIT_EMAIL = 'raj@cloudwithraj.com'
-        GIT_NAME = 'RajSaha'
+        GIT_EMAIL = 'm0hamed.nass01r0@gmail.com'
+        GIT_NAME = 'mohamednasser018'
         REPO_URL = 'github.com/${GIT_USERNAME}/kubernetesmanifest.git'
     }
     stages {
@@ -21,7 +21,7 @@ pipeline {
                                 git config user.email ${env.GIT_EMAIL}
                                 git config user.name ${env.GIT_NAME}
                                 cat deployment.yaml
-                                sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${env.DOCKERTAG}+g' deployment.yaml
+                                sed -i 's+raj80dockerid/test.*+mohamednasser018/test:${env.DOCKERTAG}+g' deployment.yaml
                                 cat deployment.yaml
                                 git add .
                                 git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'
